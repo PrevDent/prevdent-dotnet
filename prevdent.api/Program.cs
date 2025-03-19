@@ -1,4 +1,8 @@
+using prevdent.ioc;
+
 var builder = WebApplication.CreateBuilder(args);
+
+Bootstrap.Start(builder.Services, builder.Configuration);
 
 // Add services to the container.
 
