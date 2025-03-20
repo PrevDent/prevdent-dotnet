@@ -1,4 +1,6 @@
-﻿using prevdent.application.Services.Interfaces;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using prevdent.application.Services.Interfaces;
 using PrevDent.Appllication.Dtos;
 using PrevDent.Domain.Entities;
 using PrevDent.Domain.Interfaces;
@@ -8,38 +10,23 @@ namespace PrevDent.Appllication.Services
     public class PacienteApplicationService : IPacienteApplicationService
     {
         private readonly IPacienteRepository _pacienteRepository;
+        private readonly IMapper _mapper;
 
-        public PacienteApplicationService(IPacienteRepository pacienteRepository)
+        public PacienteApplicationService(IPacienteRepository pacienteRepository, IMapper mapper)
         {
             _pacienteRepository = pacienteRepository;
-        }
-
-        public PacienteEntity? DeletarDadosCliente(int id) // Specify the full namespace for PacienteEntity
-        {
-            return _pacienteRepository.DeletarDados(id);
+            _mapper = mapper;
         }
 
         public PacienteEntity? DeletarDadosPacientes(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public PacienteEntity? EditarDadosCliente(int id, PacienteDto entity)
-        {
-            var Paciente = new PacienteEntity
-            {
-                id_paciente = id,
-                nome = entity.Nome,
-                email = entity.Email,
-                idade = entity.Idade,
-            };
-
-            return _pacienteRepository.EditarDados(Paciente);
+            return _pacienteRepository.DeletarDados(id);
         }
 
         public PacienteEntity? EditarDadosPacientes(int id, PacienteDto entity)
         {
-            throw new NotImplementedException();
+            var pacienteEntity = _mapper.Map<PacienteEntity>(entity);
+            return _pacienteRepository.EditarDados(id, pacienteEntity);
         }
 
         public PacienteEntity? ObterPacientePorId(int id)
@@ -54,14 +41,8 @@ namespace PrevDent.Appllication.Services
 
         public PacienteEntity? SalvarDadosPacientes(PacienteDto entity)
         {
-            var Paciente = new PacienteEntity
-            {
-                nome = entity.Nome,
-                email = entity.Email,
-                idade = entity.Idade,
-            };
-
-            return _pacienteRepository.SalvarDados(Paciente);
+            var pacienteEntity = _mapper.Map<PacienteEntity>(entity);
+            return _pacienteRepository.SalvarDados(pacienteEntity);
         }
     }
 

@@ -37,11 +37,11 @@ namespace PrevDent.Infrastructure.Data.Repository
             }
         }
 
-        public PacienteEntity? EditarDados(PacienteEntity entity)
+        public PacienteEntity? EditarDados(int id, PacienteEntity entity)
         {
             try
             {
-                var paciente = _context.Paciente.Find(entity.id_paciente);
+                var paciente = _context.Set<PacienteEntity>().Find(id);
 
                 if (paciente is not null)
                 {
@@ -54,9 +54,11 @@ namespace PrevDent.Infrastructure.Data.Repository
 
                     return paciente;
                 }
+                else
+                {
 
-                //Gera um excecão para informar que nao foi possivel localizar o paciente
-                throw new Exception("Não foi possivel localizar o paciente ");
+                    throw new Exception("Não foi possivel localizar o paciente ");
+                }
             }
             catch (Exception ex)
             {

@@ -2,6 +2,7 @@
 using prevdent.application.Services.Interfaces;
 using PrevDent.Appllication.Dtos;
 using PrevDent.Domain.Entities;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace PrevDent.Presentation.Controller
 {
@@ -18,6 +19,10 @@ namespace PrevDent.Presentation.Controller
 
         [HttpGet]
         [Produces(typeof(IEnumerable<PacienteEntity>))]
+        [SwaggerOperation(Summary = "Obter todos os pacientes", Description = "Retorna uma lista de todos os pacientes.")]
+        [SwaggerResponse(200, "Lista de pacientes obtida com sucesso", typeof(IEnumerable<PacienteEntity>))]
+        [SwaggerResponse(204, "Nenhum paciente encontrado")]
+        [SwaggerResponse(400, "Erro ao obter pacientes")]
         public IActionResult Get()
         {
             try
@@ -37,6 +42,10 @@ namespace PrevDent.Presentation.Controller
 
         [HttpGet("{id}")]
         [Produces(typeof(PacienteEntity))]
+        [SwaggerOperation(Summary = "Obter paciente por ID", Description = "Retorna um paciente pelo ID.")]
+        [SwaggerResponse(200, "Paciente obtido com sucesso", typeof(PacienteEntity))]
+        [SwaggerResponse(204, "Paciente não encontrado")]
+        [SwaggerResponse(400, "Erro ao obter paciente")]
         public IActionResult ObterPorId(int id)
         {
             try
@@ -56,6 +65,9 @@ namespace PrevDent.Presentation.Controller
 
         [HttpPost]
         [Produces(typeof(PacienteEntity))]
+        [SwaggerOperation(Summary = "Criar novo paciente", Description = "Cria um novo paciente.")]
+        [SwaggerResponse(200, "Paciente criado com sucesso", typeof(PacienteEntity))]
+        [SwaggerResponse(400, "Erro ao criar paciente")]
         public IActionResult Post([FromBody] PacienteDto entity)
         {
             try
@@ -72,6 +84,9 @@ namespace PrevDent.Presentation.Controller
 
         [HttpPut("{id}")]
         [Produces(typeof(PacienteEntity))]
+        [SwaggerOperation(Summary = "Atualizar paciente", Description = "Atualiza os dados de um paciente existente.")]
+        [SwaggerResponse(200, "Paciente atualizado com sucesso", typeof(PacienteEntity))]
+        [SwaggerResponse(400, "Erro ao atualizar paciente")]
         public IActionResult Put(int id, [FromBody] PacienteDto entity)
         {
             try
@@ -86,9 +101,11 @@ namespace PrevDent.Presentation.Controller
             }
         }
 
-
         [HttpDelete("{id}")]
         [Produces(typeof(PacienteEntity))]
+        [SwaggerOperation(Summary = "Deletar paciente", Description = "Deleta um paciente pelo ID.")]
+        [SwaggerResponse(200, "Paciente deletado com sucesso", typeof(PacienteEntity))]
+        [SwaggerResponse(400, "Erro ao deletar paciente")]
         public IActionResult Delete(int id)
         {
             try
@@ -103,5 +120,4 @@ namespace PrevDent.Presentation.Controller
             }
         }
     }
-
 }

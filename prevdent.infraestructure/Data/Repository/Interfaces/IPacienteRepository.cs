@@ -8,7 +8,7 @@ namespace PrevDent.Domain.Interfaces
         IEnumerable<PacienteEntity>? ObterTodos();
         PacienteEntity? ObterPorId(int id);
         PacienteEntity? SalvarDados(PacienteEntity entity);
-        PacienteEntity? EditarDados(PacienteEntity entity);
+        PacienteEntity? EditarDados(int id, PacienteEntity entity);
         PacienteEntity? DeletarDados(int id);
     }
 

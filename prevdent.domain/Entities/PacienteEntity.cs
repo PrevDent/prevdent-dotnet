@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PrevDent.Domain.Entities
 {
-    [Table("tb_paciente")]
+    [Table("ch_tb_paciente")]
     public class PacienteEntity
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_paciente { get; set; }
         public string nome { get; set; } = string.Empty;
         public int idade { get; set; }
