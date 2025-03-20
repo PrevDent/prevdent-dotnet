@@ -7,8 +7,8 @@ namespace prevdent.application.Services.Interfaces
     {
         IEnumerable<PacienteEntity>? ObterTodoPacientes();
         PacienteEntity? ObterPacientePorId(int id);
-        PacienteEntity? SalvarDadosPacientes(PacienteDto entity);
-        PacienteEntity? EditarDadosPacientes(int id, PacienteDto entity);
+        PacienteEntity? SalvarDadosPacientes(PacienteDTO entity);
+        PacienteEntity? EditarDadosPacientes(int id, PacienteDTO entity);
         PacienteEntity? DeletarDadosPacientes(int id);
     }
 }

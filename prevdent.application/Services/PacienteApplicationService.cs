@@ -23,7 +23,7 @@ namespace PrevDent.Appllication.Services
             return _pacienteRepository.DeletarDados(id);
         }
 
-        public PacienteEntity? EditarDadosPacientes(int id, PacienteDto entity)
+        public PacienteEntity? EditarDadosPacientes(int id, PacienteDTO entity)
         {
             var pacienteEntity = _mapper.Map<PacienteEntity>(entity);
             return _pacienteRepository.EditarDados(id, pacienteEntity);
@@ -39,7 +39,7 @@ namespace PrevDent.Appllication.Services
             return _pacienteRepository.ObterTodos();
         }
 
-        public PacienteEntity? SalvarDadosPacientes(PacienteDto entity)
+        public PacienteEntity? SalvarDadosPacientes(PacienteDTO entity)
         {
             var pacienteEntity = _mapper.Map<PacienteEntity>(entity);
             return _pacienteRepository.SalvarDados(pacienteEntity);

@@ -2,7 +2,7 @@
 
 namespace PrevDent.Appllication.Dtos
 {
-    public class PacienteDto
+    public class PacienteDTO
     {
         [Required(ErrorMessage = $"Campo {nameof(Nome)} é obrigatorio")]
         [StringLength(150, MinimumLength = 2, ErrorMessage = "Campo deve ter no minimo 2 caracteres")]

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using prevdent.application.Dtos;
+using prevdent.application.Factories.Interfaces;
 using prevdent.application.Services.Interfaces;
 using prevdent.domain.Entities;
 using PrevDent.Domain.Entities;
@@ -12,10 +13,12 @@ namespace prevdent.api.Controllers;
 public class DentistaController : ControllerBase
 {
     private readonly IDentistaApplicationService _dentistaApplicationService;
+    private readonly IDentistaFactory _dentistaFactory;
 
-    public DentistaController(IDentistaApplicationService dentistaApplicationService)
+    public DentistaController(IDentistaApplicationService dentistaApplicationService, IDentistaFactory dentistaFactory)
     {
         _dentistaApplicationService = dentistaApplicationService;
+        _dentistaFactory = dentistaFactory;
     }
 
     [HttpGet]
@@ -73,7 +76,8 @@ public class DentistaController : ControllerBase
     {
         try
         {
-            var dentista = _dentistaApplicationService.SalvarDadosDentista(entity);
+            var dentista = _dentistaFactory.CreateDentista(entity.Nome, entity.Idade, entity.Email, entity.Cro);
+            _dentistaApplicationService.SalvarDadosDentista(dentista);
 
             return Ok(dentista);
         }

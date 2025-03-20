@@ -10,6 +10,8 @@ using prevdent.application.Mappings;
 using prevdent.infraestructure.Data.Repository.Interfaces;
 using prevdent.infraestructure.Data.Repository;
 using prevdent.application.Services;
+using prevdent.application.Factories.Interfaces;
+using prevdent.application.Factories;
 
 namespace prevdent.ioc;
 
@@ -28,6 +30,9 @@ public class Bootstrap
 
         service.AddTransient<IDentistaRepository, DentistaRepository>();
         service.AddTransient<IDentistaApplicationService, DentistaApplicationService>();
+
+        service.AddScoped<IPacienteFactory, PacienteFactory>();
+        service.AddScoped<IDentistaFactory, DentistaFactory>();
 
         service.AddAutoMapper(typeof(MapperProfile));
     }

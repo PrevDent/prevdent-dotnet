@@ -10,7 +10,7 @@ public class MapperProfile : Profile
 {
     public MapperProfile()
     {
-        CreateMap<PacienteEntity, PacienteDto>().ReverseMap();
+        CreateMap<PacienteEntity, PacienteDTO>().ReverseMap();
         CreateMap<DentistaEntity, DentistaDTO>().ReverseMap();
     }
 }
