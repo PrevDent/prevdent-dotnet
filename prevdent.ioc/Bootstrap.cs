@@ -12,6 +12,10 @@ using prevdent.infraestructure.Data.Repository;
 using prevdent.application.Services;
 using prevdent.application.Factories.Interfaces;
 using prevdent.application.Factories;
+using PrevDent.Application.Services;
+using prevdent.Application.Services.Interfaces;
+using FraudWatch.Application.Services;
+using PrevDent.Application.Services.Interfaces;
 
 namespace prevdent.ioc;
 
@@ -33,6 +37,10 @@ public class Bootstrap
 
         service.AddScoped<IPacienteFactory, PacienteFactory>();
         service.AddScoped<IDentistaFactory, DentistaFactory>();
+
+        service.AddTransient<IViaCepApplicationService, ViaCepApplicationService>();
+
+        service.AddTransient<ISentimentAnalysisApplicationService, SentimentAnalysisApplicationService>();
 
         service.AddAutoMapper(typeof(MapperProfile));
     }
