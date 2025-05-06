@@ -1,25 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prevdent.api", "prevdent.api.csproj", "{D7125068-8472-4C2A-B3F2-F46B2AF03C38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prevdent.api", "prevdent.api.csproj", "{D7125068-8472-4C2A-B3F2-F46B2AF03C38}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API", "1 - API", "{ED0173EF-7A15-4C65-BCFB-AA28A36BFA61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prevdent.domain", "..\prevdent.domain\prevdent.domain.csproj", "{A7C5256D-BD09-4367-99A4-57054F9D5895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prevdent.domain", "..\prevdent.domain\prevdent.domain.csproj", "{A7C5256D-BD09-4367-99A4-57054F9D5895}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{235AD6AF-9598-4959-97F5-7313BF6A1574}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infraestructure", "4 - Infraestructure", "{11A20AAF-06DF-40EE-BE7C-A6DF30F7B516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prevdent.infraestructure", "..\prevdent.infraestructure\prevdent.infraestructure.csproj", "{09E5AF1B-B8F7-413E-A879-3EF835821E57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prevdent.infraestructure", "..\prevdent.infraestructure\prevdent.infraestructure.csproj", "{09E5AF1B-B8F7-413E-A879-3EF835821E57}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{822F4581-43DB-452D-AF98-108616E67565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prevdent.application", "..\prevdent.application\prevdent.application.csproj", "{43473A7F-8C58-441A-B997-2CB547DB432A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prevdent.application", "..\prevdent.application\prevdent.application.csproj", "{43473A7F-8C58-441A-B997-2CB547DB432A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prevdent.ioc", "..\prevdent.ioc\prevdent.ioc.csproj", "{72461ACD-EE98-4638-A056-563C92F023EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prevdent.ioc", "..\prevdent.ioc\prevdent.ioc.csproj", "{72461ACD-EE98-4638-A056-563C92F023EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{C8227171-B3F4-4BCD-8C60-5875B8BCCF70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prevdent.test", "..\prevdent.test\prevdent.test.csproj", "{D80FBF58-2531-4F89-89CF-F7542C8F705A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,10 @@ Global
 		{72461ACD-EE98-4638-A056-563C92F023EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72461ACD-EE98-4638-A056-563C92F023EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72461ACD-EE98-4638-A056-563C92F023EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80FBF58-2531-4F89-89CF-F7542C8F705A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80FBF58-2531-4F89-89CF-F7542C8F705A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80FBF58-2531-4F89-89CF-F7542C8F705A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80FBF58-2531-4F89-89CF-F7542C8F705A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +65,9 @@ Global
 		{09E5AF1B-B8F7-413E-A879-3EF835821E57} = {11A20AAF-06DF-40EE-BE7C-A6DF30F7B516}
 		{43473A7F-8C58-441A-B997-2CB547DB432A} = {822F4581-43DB-452D-AF98-108616E67565}
 		{72461ACD-EE98-4638-A056-563C92F023EF} = {11A20AAF-06DF-40EE-BE7C-A6DF30F7B516}
+		{D80FBF58-2531-4F89-89CF-F7542C8F705A} = {C8227171-B3F4-4BCD-8C60-5875B8BCCF70}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47D6549D-F497-4DB1-8AA7-6F6BD4C4093F}
 	EndGlobalSection
 EndGlobal
